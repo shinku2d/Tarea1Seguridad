@@ -21,24 +21,37 @@ function logout() {
 }
 
 function pagar(){
+  console.info($('#pago').serialize());
   $.ajax({
     method: "POST",
     type: 'POST',
-    url: "/service/pagar",
+    url: "/service/cargar",
+    dataType: 'json',
+    data: $('#pago').serialize(),
+    success: function(response) {
+      if(response.url){
+        $(location).attr('href', response.url);
+      } else {
+        alert('Error del servidor de pagos');
+      }
+    }
+  });
+}
+
+function procesar(){
+  $.ajax({
+    method: "POST",
+    type: 'POST',
+    url: "/service/procesar",
     dataType: 'json',
     data: {},
     success: function(response) {
-      alert("Correcto");
-      //window.location.href = response;
-      $(location).attr('href', response.url);
+      if(response.url){
+        $(location).attr('href', response.url);
+      } else {
+        alert('Error del servidor de pagos');
+      }
     }
-    /*
-    error: function(response){
-      alert("Error");
-      console.info(response);
-      //window.location.href = response;
-    }
-    */
   });
 }
 
@@ -55,6 +68,9 @@ $(document).ready(function(){
   });
   $('#btn-pagar').click(function(){
     pagar();
+  });
+  $('#btn-procesar').click(function(){
+    procesar();
   });
   $('.tipos input').click(function(){
     switch ($(this).val()) {

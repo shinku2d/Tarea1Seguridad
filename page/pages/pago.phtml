@@ -16,13 +16,20 @@
       <div class="card pago-card col-md-6">
         <div class="card-body">
           <h5 class="card-title">Pago del producto</h5>
-          <form>
+          <form id='pago'>
             <!-- Campos ocultos -->
-            <input type="hidden" value="<?=$params['monto']?>"/>
+            <input type="hidden" id="hash" name="hash" value="<?=$params['hash']?>"/>
+            <input type="hidden" id="transaccion" name="transaccion" value="<?=$params['transaccion']?>"/>
+            <input type="hidden" id="timestamp" name="timestamp" value="<?=$params['timestamp']?>"/>
+            <input type="hidden" id="comercio" name="comercio" value="<?=$params['comercio']?>"/>
+            <input type="hidden" id="moneda" name="moneda" value="<?=$params['moneda']?>"/>
+            <input type="hidden" id="url" name="url" value="<?=$params['url']?>"/>
+            <input type="hidden" name="usuario" value="<?=$params['usuario']?>">
+            <input type="hidden" name="monto" value="<?=$params['monto']?>">
             <!-- Campos visuales -->
             <div class="form-group">
               <label for="usuario">Usuario</label>
-              <input type="text" class="form-control" id="usuario" placeholder="Usuario" value="<?=$params['usuario']?>" disabled>
+              <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Usuario" value="<?=$params['usuario']?>" disabled>
             </div>
             <div class="form-row tipos">
               <div class="col">
@@ -50,7 +57,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><?=$params['moneda']?></div>
                 </div>
-                <input type="number" class="form-control" id="monto" placeholder="Monto" value="<?=$params['monto']?>" disabled>
+                <input type="number" class="form-control" id="monto" name="monto" placeholder="Monto" value="<?=$params['monto']?>" disabled>
               </div>
             </div>
             <button type="submit" class="btn btn-danger" id="btn-logout">Salir</button>
