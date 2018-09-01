@@ -83,7 +83,7 @@ $app->group('/page', function () use ($app) {
                 .$_SESSION['comercio'].'-'
                 .$clave_hash);
       if($hash == $_SESSION['hash']){
-        $response = $this->view->render($response, 'pasarela.phtml', []);
+        $response = $this->view->render($response, 'pasarela.phtml', ['monto' => $_SESSION['monto'], 'moneda' => $_SESSION['moneda']]);
       } else {
         $response = $response->withRedirect($_SESSION['url'].'/0', 301);
       }

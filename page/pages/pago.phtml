@@ -25,7 +25,7 @@
             <input type="hidden" id="moneda" name="moneda" value="<?=$params['moneda']?>"/>
             <input type="hidden" id="url" name="url" value="<?=$params['url']?>"/>
             <input type="hidden" name="usuario" value="<?=$params['usuario']?>">
-            <input type="hidden" name="monto" value="<?=$params['monto']?>">
+            <input type="hidden" name="monto" id="monto" value="<?=$params['monto']?>">
             <!-- Campos visuales -->
             <div class="form-group">
               <label for="usuario">Usuario</label>
@@ -57,7 +57,7 @@
                 <div class="input-group-prepend">
                   <div class="input-group-text"><?=$params['moneda']?></div>
                 </div>
-                <input type="number" class="form-control" id="monto" name="monto" placeholder="Monto" value="<?=$params['monto']?>" disabled>
+                <input type="number" class="form-control" id="rbmonto" name="rbmonto" placeholder="Monto" value="<?=$params['monto']?>" disabled>
               </div>
             </div>
             <button type="submit" class="btn btn-danger" id="btn-logout">Salir</button>

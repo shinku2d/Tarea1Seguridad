@@ -4,19 +4,15 @@ function login(usuario, contrasena) {
     url: "/service/login",
     dataType: 'json',
     data: { 'usuario': usuario, 'contrasena': contrasena }
-  }).done(function( html ) {
-
   });
 }
 
 function logout() {
   $.ajax({
     method: "POST",
-    url: "/service/login",
+    url: "/service/logout",
     dataType: 'json',
     data: {}
-  }).done(function( html ) {
-
   });
 }
 
@@ -57,6 +53,18 @@ function procesar(){
 
 function setMonto(monto) {
   $('#monto').val(monto)
+  $('#rbmonto').val(monto)
+  $.ajax({
+    method: "POST",
+    url: "/service/hash",
+    dataType: 'json',
+    data: $('#pago').serialize(),
+    success: function(response) {
+      if(response.hash){
+        $('#hash').val(response.hash);
+      }
+    }
+  });
 }
 
 $(document).ready(function(){
