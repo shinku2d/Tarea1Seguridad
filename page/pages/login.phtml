@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Login">
+    <meta name="description" content="Pantalla de acceso al sistema de pago">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" media="all" />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/basico.js"></script>
+  </head>
+  <body class="login-page">
+    <div class="container">
+      <div class="card login-card col-md-4">
+        <div class="card-body">
+          <h5 class="card-title">Iniciar sesión</h5>
+          <form>
+            <div class="form-group">
+              <label for="usuario">Usuario</label>
+              <input type="text" class="form-control" id="usuario" placeholder="Ingrese su usuario" required>
+            </div>
+            <div class="form-group">
+              <label for="contrasena">Contraseña</label>
+              <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña">
+            </div>
+            <button type="submit" class="btn btn-primary" id="btn-login">Ingresar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

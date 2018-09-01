@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <meta name="title" content="Pago online">
+    <meta name="description" content="Pantalla para realizar pagos online">
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" media="all" />
+    <script type="text/javascript" src="/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/basico.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card pago-card col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">Pago del producto</h5>
+          <form>
+            <!-- Campos ocultos -->
+            <input type="hidden" value="<?=$params['monto']?>"/>
+            <!-- Campos visuales -->
+            <div class="form-group">
+              <label for="usuario">Usuario</label>
+              <input type="text" class="form-control" id="usuario" placeholder="Usuario" value="<?=$params['usuario']?>" disabled>
+            </div>
+            <div class="form-row tipos">
+              <div class="col">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input" value="500" checked>
+                  <label class="custom-control-label" for="customRadio1">500 GB</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input" value="1000">
+                  <label class="custom-control-label" for="customRadio2">1 TB</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input" value="2000">
+                  <label class="custom-control-label" for="customRadio3">2 TB</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="monto">Monto del pago</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text"><?=$params['moneda']?></div>
+                </div>
+                <input type="number" class="form-control" id="monto" placeholder="Monto" value="<?=$params['monto']?>" disabled>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-danger" id="btn-logout">Salir</button>
+            <button type="button" class="btn btn-success" id="btn-pagar">Pagar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
