@@ -140,6 +140,9 @@ $app->group('/service', function () use ($app) {
       $data = ['estado' => 1, 'url' => '/page/pasarela'];
       return $response->withJson($data, 201);
   });
+  /**
+    ESTE SERVICIO IRIA EN EL SERVIDOR DEL BANCO O COMPAÑIA DE TERCERIZACIÓ
+  */
   /* Procesa la transaccion, el hash es verificado nuevamente, además verifica
     otro aspectos como los montos, los saldos y los datos de tarjeta, EN ESTE
     CASO NO ES REAL, SIEMPRE LO VALIDA. */
